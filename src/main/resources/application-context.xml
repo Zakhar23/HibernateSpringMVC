@@ -4,4 +4,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
+    <bean id="main" class="ua.goit.java.hibspr.Main">
+        <property name="employeeController" ref="employeeController"/>
+    </bean>
+
+    <bean id="employeeController" class="ua.goit.java.hibspr.model.controllers.EmployeeController">
+        <property name="employeeDao" ref="employeeDao"/>
+    </bean>
+
+    <bean id="employeeDao" class="ua.goit.java.hibspr.model.hibernate.HEmployeeDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
 </beans>
