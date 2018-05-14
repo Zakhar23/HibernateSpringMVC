@@ -1,8 +1,8 @@
-package ua.goit.java.hibspr.model.controllers;
+package ua.goit.java.hibspr.controllers;
 
 import org.springframework.transaction.annotation.Transactional;
 import ua.goit.java.hibspr.model.EmployeeDao;
-import ua.goit.java.hibspr.model.hibernate.HEmployeeDao;
+import ua.goit.java.hibspr.hibernate.HEmployeeDao;
 import ua.goit.java.hibspr.model.Employee;
 import ua.goit.java.hibspr.model.Position;
 

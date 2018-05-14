@@ -8,11 +8,11 @@
         <property name="employeeController" ref="employeeController"/>
     </bean>
 
-    <bean id="employeeController" class="ua.goit.java.hibspr.model.controllers.EmployeeController">
+    <bean id="employeeController" class="ua.goit.java.hibspr.controllers.EmployeeController">
         <property name="employeeDao" ref="employeeDao"/>
     </bean>
 
-    <bean id="employeeDao" class="ua.goit.java.hibspr.model.hibernate.HEmployeeDao">
+    <bean id="employeeDao" class="ua.goit.java.hibspr.hibernate.HEmployeeDao">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 

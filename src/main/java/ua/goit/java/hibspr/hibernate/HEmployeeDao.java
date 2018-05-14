@@ -1,4 +1,4 @@
-package ua.goit.java.hibspr.model.hibernate;
+package ua.goit.java.hibspr.hibernate;
 
 import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
