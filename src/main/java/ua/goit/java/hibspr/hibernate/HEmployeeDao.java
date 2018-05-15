@@ -21,7 +21,11 @@ public class HEmployeeDao implements EmployeeDao {
     }
 
     public List<Employee> findAll() {
-        return null;
+        return sessionFactory.getCurrentSession().createQuery("select e from Employee e").list();
+    }
+
+    public void remove(Employee employee) {
+        sessionFactory.getCurrentSession().delete(employee);
     }
 
     public void setSessionFactory(SessionFactory sessionFactory) {
