@@ -1,12 +1,13 @@
 package ua.goit.java.hibspr.controllers;
 
 import org.springframework.transaction.annotation.Transactional;
-import ua.goit.java.hibspr.model.EmployeeDao;
-import ua.goit.java.hibspr.hibernate.HEmployeeDao;
+import ua.goit.java.hibspr.dao.EmployeeDao;
+import ua.goit.java.hibspr.dao.hibernate.HEmployeeDao;
 import ua.goit.java.hibspr.model.Employee;
 import ua.goit.java.hibspr.model.Position;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class EmployeeController {
@@ -32,6 +33,11 @@ public class EmployeeController {
 
         return employee;
 
+    }
+
+    @Transactional
+    public List<Employee> getAllEmployee() {
+        return employeeDao.findAll();
     }
 
     public void setEmployeeDao(HEmployeeDao employeeDao) {

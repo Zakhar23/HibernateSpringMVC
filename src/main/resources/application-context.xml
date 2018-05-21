@@ -6,13 +6,24 @@
 
     <bean id="main" class="ua.goit.java.hibspr.Main">
         <property name="employeeController" ref="employeeController"/>
+        <property name="dishController" ref="dishController"/>
     </bean>
+
 
     <bean id="employeeController" class="ua.goit.java.hibspr.controllers.EmployeeController">
         <property name="employeeDao" ref="employeeDao"/>
     </bean>
 
-    <bean id="employeeDao" class="ua.goit.java.hibspr.hibernate.HEmployeeDao">
+    <bean id="employeeDao" class="ua.goit.java.hibspr.dao.hibernate.HEmployeeDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+
+    <bean id="dishController" class="ua.goit.java.hibspr.controllers.DishController">
+        <property name="dishDao" ref="dishDao"/>
+    </bean>
+
+    <bean id="dishDao" class="ua.goit.java.hibspr.dao.hibernate.HDishDao">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
