@@ -1,6 +1,8 @@
 package ua.goit.java.hibspr.dao.hibernate;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.transaction.annotation.Transactional;
 import ua.goit.java.hibspr.dao.EmployeeDao;
 import ua.goit.java.hibspr.model.Employee;
@@ -24,6 +26,17 @@ public class HEmployeeDao implements EmployeeDao {
     public List<Employee> findAll() {
         return sessionFactory.getCurrentSession().createQuery("select e from Employee e").list();
     }
+
+    @Override
+    public Employee findByName(String name) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("select e from Employee e where e.name like :name");
+        query.setParameter("name", name);
+        return (Employee) query.uniqueResult();
+    }
+
+
+
 
     public void remove(Employee employee) {
         sessionFactory.getCurrentSession().delete(employee);

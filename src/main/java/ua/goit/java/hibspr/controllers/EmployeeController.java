@@ -40,6 +40,11 @@ public class EmployeeController {
         return employeeDao.findAll();
     }
 
+    @Transactional
+    public Employee getEmployeeByName(String name) {
+        return employeeDao.findByName(name);
+    }
+
     public void setEmployeeDao(HEmployeeDao employeeDao) {
         this.employeeDao = employeeDao;
     }
