@@ -1,12 +1,16 @@
 package ua.goit.java.hibspr.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Dish")
+@Table(name = "dish")
 public class Dish {
 
     @Id
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment",strategy = "increment")
     @Column(name = "id")
     private Long id;
 
