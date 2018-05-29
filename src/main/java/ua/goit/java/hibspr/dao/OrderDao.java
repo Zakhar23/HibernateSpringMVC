@@ -1,12 +1,12 @@
 package ua.goit.java.hibspr.dao;
 
-import ua.goit.java.hibspr.model.Order;
+import ua.goit.java.hibspr.model.Orders;
 
 import java.util.List;
 
 public interface OrderDao {
 
-    void save(Order order);
+    void save(Orders order);
 
-    List<Order> findAll();
+    List<Orders> findAll();
 }

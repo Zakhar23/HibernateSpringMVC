@@ -6,7 +6,9 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-public class Order {
+@Entity
+@Table(name = "orders")
+public class Orders {
 
     @Id
     @GeneratedValue(generator = "increment")
@@ -70,5 +72,16 @@ public class Order {
 
     public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "id=" + id +
+                ", waiter=" + waiter +
+                ", dishes=" + dishes +
+                ", TableNumber=" + TableNumber +
+                ", orderDate=" + orderDate +
+                '}';
     }
 }

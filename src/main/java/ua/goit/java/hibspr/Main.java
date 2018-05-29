@@ -4,12 +4,17 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ua.goit.java.hibspr.controllers.DishController;
 import ua.goit.java.hibspr.controllers.EmployeeController;
+import ua.goit.java.hibspr.controllers.OrderController;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Main {
 
     private EmployeeController employeeController;
     private DishController dishController;
+    private OrderController orderController;
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("hibernate-context.xml", "application-context.xml");
@@ -23,11 +28,25 @@ public class Main {
         employeeController.createEmployee();
         dishController.createDish();
 
-        employeeController.getAllEmployee().forEach(System.out::println);
-        dishController.getAllDishes().forEach(System.out::println);
+        List<String> dishes1 = new ArrayList<>();
+        dishes1.add("Plov");
+        dishes1.add("Salad");
 
-        System.out.println(employeeController.getEmployeeByName("John"));
-        System.out.println(dishController.getDishByName("Salad"));
+        orderController.createOrder("John", dishes1, 1);
+
+        List<String> dishes2 = new ArrayList<>();
+        dishes2.add("Plov");
+        dishes2.add("Salad");
+
+        orderController.createOrder("John", dishes2, 2);
+
+//        orderController.getAllOrders().forEach(System.out::println);
+        orderController.printAllOrders();
+//        employeeController.getAllEmployee().forEach(System.out::println);
+//        dishController.getAllDishes().forEach(System.out::println);
+//
+//        System.out.println(employeeController.getEmployeeByName("John"));
+//        System.out.println(dishController.getDishByName("Salad"));
 
     }
 
@@ -37,5 +56,9 @@ public class Main {
 
     public void setDishController(DishController dishController) {
         this.dishController = dishController;
+    }
+
+    public void setOrderController(OrderController orderController) {
+        this.orderController = orderController;
     }
 }
