@@ -10,6 +10,7 @@
         <property name="employeeController" ref="employeeController"/>
         <property name="dishController" ref="dishController"/>
         <property name="orderController" ref="orderController"/>
+        <property name="reInit" value="true"/>
     </bean>
 
 

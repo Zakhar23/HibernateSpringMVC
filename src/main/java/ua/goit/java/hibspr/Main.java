@@ -15,6 +15,7 @@ public class Main {
     private EmployeeController employeeController;
     private DishController dishController;
     private OrderController orderController;
+    private Boolean reInit;
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("hibernate-context.xml", "application-context.xml");
@@ -24,6 +25,14 @@ public class Main {
     }
 
     private void start() {
+
+        if (reInit) {
+            init();
+        }
+
+    }
+
+    private void init() {
 
         employeeController.createEmployee();
         dishController.createDish();
@@ -60,5 +69,9 @@ public class Main {
 
     public void setOrderController(OrderController orderController) {
         this.orderController = orderController;
+    }
+
+    public void setReInit(Boolean reInit) {
+        this.reInit = reInit;
     }
 }
