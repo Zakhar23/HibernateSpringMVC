@@ -78,7 +78,6 @@ public class Orders {
     public String toString() {
         return "Orders{" +
                 "id=" + id +
-                ", waiter=" + waiter +
                 ", dishes=" + dishes +
                 ", TableNumber=" + TableNumber +
                 ", orderDate=" + orderDate +

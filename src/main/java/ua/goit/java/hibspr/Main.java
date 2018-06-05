@@ -30,6 +30,8 @@ public class Main {
             init();
         }
 
+        employeeController.printAllEmployees();
+
     }
 
     private void init() {

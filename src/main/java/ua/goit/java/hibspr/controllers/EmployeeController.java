@@ -5,6 +5,7 @@ import ua.goit.java.hibspr.dao.EmployeeDao;
 import ua.goit.java.hibspr.dao.hibernate.HEmployeeDao;
 import ua.goit.java.hibspr.model.Employee;
 import ua.goit.java.hibspr.model.Position;
+import ua.goit.java.hibspr.model.Waiter;
 
 import java.util.HashSet;
 import java.util.List;
@@ -19,19 +20,19 @@ public class EmployeeController {
 
         Set<Employee> allEmployees = new HashSet<Employee>(employeeDao.findAll());
 
-        Employee employee = new Employee();
+        Waiter waiter = new Waiter();
         //employee.setId(1L);
-        employee.setName("John");
-        employee.setSurname("Smith");
-        employee.setPosition(Position.WAITER);
-        employee.setPhoneNumber("555-55-55");
-        employee.setSalary(25000.0F);
+        waiter.setName("John");
+        waiter.setSurname("Smith");
+        waiter.setPosition(Position.WAITER);
+        waiter.setPhoneNumber("555-55-55");
+        waiter.setSalary(25000.0F);
 
-        if (!allEmployees.contains(employee)) {
-            employeeDao.save(employee);
+        if (!allEmployees.contains(waiter)) {
+            employeeDao.save(waiter);
         }
 
-        return employee;
+        return waiter;
 
     }
 
@@ -43,6 +44,11 @@ public class EmployeeController {
     @Transactional
     public Employee getEmployeeByName(String name) {
         return employeeDao.findByName(name);
+    }
+
+    @Transactional
+    public void printAllEmployees() {
+        employeeDao.findAll().forEach(System.out::println);
     }
 
     public void setEmployeeDao(HEmployeeDao employeeDao) {
