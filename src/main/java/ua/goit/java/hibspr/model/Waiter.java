@@ -1,5 +1,8 @@
 package ua.goit.java.hibspr.model;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -7,8 +10,9 @@ import java.util.List;
 @Table(name = "employee")
 public class Waiter extends Employee {
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "employee_id")
+    @Fetch(FetchMode.SELECT)
     private List<Orders> orders;
 
     public List<Orders> getOrders() {
