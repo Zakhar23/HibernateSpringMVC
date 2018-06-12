@@ -20,7 +20,7 @@ public class Orders {
     @JoinColumn(name = "employee_id")
     private Employee waiter;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "dish_to_order",
             joinColumns = @JoinColumn(name = "order_id"),

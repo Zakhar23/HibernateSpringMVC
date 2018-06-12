@@ -50,7 +50,9 @@ public class Main {
         dishes2.add("Plov");
         dishes2.add("Salad");
 
-        orderController.createOrder("John", dishes2, 2);
+        //orderController.createOrder("John", dishes2, 2);
+
+
 
 //        orderController.getAllOrders().forEach(System.out::println);
         orderController.printAllOrders();
