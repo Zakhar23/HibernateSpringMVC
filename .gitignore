@@ -1,0 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/codeStyles/
+.idea/compiler.xml
+.idea/dataSources.local.xml
+.idea/dataSources/
+.idea/encodings.xml
+.idea/inspectionProfiles/
+.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+HibernateSpringMVC.iml
+src/test/
+target/
