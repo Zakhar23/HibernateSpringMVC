@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Hello Zakhar, my name is Lindsay Lohan</h1>
+<h1>Hello Zakhar, my name is Lindsay Lohan. Current time is ${currentTime}</h1>
 </body>
 </html>
