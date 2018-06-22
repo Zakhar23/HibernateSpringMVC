@@ -5,6 +5,13 @@
 
     <!--default-autowire="byName"> - if we do not want to write property-->
 
+    <bean name="employeeControllerWeb" class="ua.goit.java.hibspr.web.EmployeeControllerWeb">
+        <property name="employeeService" ref="employeeService"/>
+    </bean>
+
+    <bean name="employeeService" class="ua.goit.java.hibspr.service.EmployeeService">
+        <property name="employeeDao" ref="employeeDao"/>
+    </bean>
 
     <bean id="main" class="ua.goit.java.hibspr.Main">
         <property name="employeeController" ref="employeeController"/>

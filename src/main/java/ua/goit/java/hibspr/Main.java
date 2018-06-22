@@ -18,7 +18,7 @@ public class Main {
     private Boolean reInit;
 
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("hibernate-context.xml", "application-context.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("WEB-INF/hibernate-context.xml", "WEB-INF/application-context.xml");
         Main main = applicationContext.getBean(Main.class);
         main.start();
 

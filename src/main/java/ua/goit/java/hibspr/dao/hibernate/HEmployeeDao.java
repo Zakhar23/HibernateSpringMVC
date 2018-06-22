@@ -27,6 +27,11 @@ public class HEmployeeDao implements EmployeeDao {
         return sessionFactory.getCurrentSession().createQuery("select e from Employee e").list();
     }
 
+    @Transactional
+    public List<Employee> findAllWaiters() {
+        return sessionFactory.getCurrentSession().createQuery("select w from Waiter w").list();
+    }
+
     @Override
     public Employee findByName(String name) {
         Session session = sessionFactory.getCurrentSession();
