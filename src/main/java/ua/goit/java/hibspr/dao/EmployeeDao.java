@@ -1,6 +1,7 @@
 package ua.goit.java.hibspr.dao;
 
 import ua.goit.java.hibspr.model.Employee;
+import ua.goit.java.hibspr.model.Waiter;
 
 import java.util.List;
 
@@ -11,8 +12,6 @@ public interface EmployeeDao {
     Employee load(Long id);
 
     List<Employee> findAll();
-
-    List<Employee> findAllWaiters();
 
     Employee findByName(String name);
 

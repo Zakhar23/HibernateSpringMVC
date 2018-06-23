@@ -18,7 +18,7 @@ public class Main {
     private Boolean reInit;
 
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("WEB-INF/hibernate-context.xml", "WEB-INF/application-context.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("hibernate-context.xml", "application-context.xml");
         Main main = applicationContext.getBean(Main.class);
         main.start();
 
@@ -38,6 +38,7 @@ public class Main {
     private void init() {
 
         employeeController.createEmployee();
+        //employeeController.createWaiter();
         dishController.createDish();
 
         List<String> dishes1 = new ArrayList<>();

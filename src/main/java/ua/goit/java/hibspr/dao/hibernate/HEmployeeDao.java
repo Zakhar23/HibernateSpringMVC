@@ -6,6 +6,7 @@ import org.hibernate.query.Query;
 import org.springframework.transaction.annotation.Transactional;
 import ua.goit.java.hibspr.dao.EmployeeDao;
 import ua.goit.java.hibspr.model.Employee;
+import ua.goit.java.hibspr.model.Waiter;
 
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class HEmployeeDao implements EmployeeDao {
     }
 
     @Transactional
-    public List<Employee> findAllWaiters() {
+    public List<Waiter> findAllWaiters() {
         return sessionFactory.getCurrentSession().createQuery("select w from Waiter w").list();
     }
 

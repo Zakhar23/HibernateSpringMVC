@@ -1,8 +1,10 @@
 package ua.goit.java.hibspr.web;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import ua.goit.java.hibspr.dao.EmployeeDao;
 import ua.goit.java.hibspr.service.EmployeeService;
 
 import java.util.Map;
@@ -18,7 +20,9 @@ public class EmployeeControllerWeb {
         return "employees";
     }
 
+    @Autowired
     public void setEmployeeService(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
+
 }

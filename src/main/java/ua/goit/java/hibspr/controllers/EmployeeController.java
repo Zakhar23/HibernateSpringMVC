@@ -20,8 +20,27 @@ public class EmployeeController {
 
         Set<Employee> allEmployees = new HashSet<Employee>(employeeDao.findAll());
 
+        Employee employee = new Employee();
+        employee.setName("Ann");
+        employee.setSurname("Smith");
+        employee.setPosition(Position.WAITER);
+        employee.setPhoneNumber("555-55-58");
+        employee.setSalary(27000.0F);
+
+        if (!allEmployees.contains(employee)) {
+            employeeDao.save(employee);
+        }
+
+        return employee;
+
+    }
+
+    @Transactional
+    public Employee createWaiter() {
+
+        Set<Employee> allEmployees = new HashSet<Employee>(employeeDao.findAll());
+
         Waiter waiter = new Waiter();
-        //employee.setId(1L);
         waiter.setName("John");
         waiter.setSurname("Smith");
         waiter.setPosition(Position.WAITER);
