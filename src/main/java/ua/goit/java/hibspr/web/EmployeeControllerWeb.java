@@ -2,8 +2,11 @@ package ua.goit.java.hibspr.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import ua.goit.java.hibspr.dao.EmployeeDao;
 import ua.goit.java.hibspr.service.EmployeeService;
 
@@ -18,6 +21,17 @@ public class EmployeeControllerWeb {
     public String employees(Map<String, Object> model) {
         model.put("employees", employeeService.getEmployees());
         return "employees";
+    }
+
+//    @RequestMapping(value = "/employee", method = RequestMethod.GET)
+//        public ModelAndView employee(@RequestParam("employee") String employeeName) {
+
+    @RequestMapping(value = "/employee/{employeeName}", method = RequestMethod.GET)
+    public ModelAndView employee(@PathVariable String employeeName) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("employee", employeeService.getEmployeeByName(employeeName));
+        modelAndView.setViewName("employee");
+        return modelAndView;
     }
 
     @Autowired

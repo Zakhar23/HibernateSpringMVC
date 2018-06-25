@@ -20,6 +20,11 @@ public class EmployeeService {
         return employeeDao.findAll();
     }
 
+    @Transactional
+    public Object getEmployeeByName(String employeeName) {
+        return employeeDao.findByName(employeeName);
+    }
+
     public void setEmployeeDao(EmployeeDao employeeDao) {
         this.employeeDao = employeeDao;
     }

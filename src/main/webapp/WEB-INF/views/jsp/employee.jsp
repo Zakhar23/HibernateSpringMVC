@@ -13,14 +13,16 @@
         <th>First name</th>
         <th>Last name</th>
         <th>Position</th>
+        <th>Salary</th>
     </tr>
-    <c:forEach var="employee" items="${employees}">
-        <tr>
-            <td><a href="/employee/${employee.name}">${employee.name}</a></td>
-            <td>${employee.surname}</td>
-            <td>${employee.position}</td>
-        </tr>
-    </c:forEach>
+    <tr>
+        <td>${employee.name}</td>
+        <td>${employee.surname}</td>
+        <td>${employee.position}</td>
+        <td>${employee.salary}</td>
+    </tr>
+
+
 </table>
 
 </body>

@@ -15,7 +15,7 @@
         <property name="driverClass" value="org.postgresql.Driver"/>
         <property name="jdbcUrl" value="jdbc:postgresql://localhost:5432/restaurant"/>
         <property name="user" value="postgres"/>
-        <property name="password" value="13"/>
+        <property name="password" value="131313"/>
         <property name="minPoolSize" value="1"/>
         <property name="maxPoolSize" value="10"/>
         <property name="acquireIncrement" value="1"/>
