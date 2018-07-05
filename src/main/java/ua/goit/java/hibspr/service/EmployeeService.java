@@ -21,7 +21,7 @@ public class EmployeeService {
     }
 
     @Transactional
-    public Object getEmployeeByName(String employeeName) {
+    public Employee getEmployeeByName(String employeeName) {
         return employeeDao.findByName(employeeName);
     }
 
